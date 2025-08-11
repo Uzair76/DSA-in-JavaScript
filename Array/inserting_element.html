@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Element in Array</title>
+    <script>
+        // let arr = [1, 54, 548, 66, 87, 53, 15, 89, 87, 454, 45, 17];
+        // let newElement = 100; 
+        // let position = 5;
+
+        // document.write("Array before insertion: " + arr.join(", ") + "<br>");
+
+        // for (let i = arr.length - 1; i >= position; i--) {
+        //     arr[i + 1] = arr[i];
+        //     if (i === position) {
+        //         arr[i] = newElement;
+        //     }
+        // }
+        // document.write("Array after insertion: " + arr.join(", "));
+        // ---------------------------------------------------------------------------
+
+        function insertElement(){
+            let arr = [1, 54, 548, 66, 87, 53, 15, 89, 87, 454, 45, 17];
+            let newElement = document.getElementById('newEl').value;
+            let position = parseInt(document.getElementById('position').value);
+
+            if (position < 0 || position > arr.length) {
+                document.write("Invalid position. Please enter a valid index.<br>");
+                return;
+            }
+
+            document.write("Array before insertion: " + arr.join(", ") + "<br>");
+
+            for (let i = arr.length - 1; i >= position; i--) {
+                arr[i + 1] = arr[i];
+                if (i === position) {
+                    arr[i] = newElement;
+                }
+            }
+
+            document.write("Array after insertion: " + arr.join(", "));
+        }
+    </script>
+</head>
+<body>
+
+    <input type="text"  id="newEl" placeholder="Enter new element">
+    <input type="number" id="position" placeholder="Enter position to insert">
+    <button onclick="insertElement()">Insert Element</button>
+</body>
+</html>
