@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Travercing</title>
+</head>
+<Script>
+
+    let arr = [1,54,548,66,87,53,15,89,87,454,45,17];
+
+    // for (start=0;start <arr.length;start++){
+    //     document.write(arr[start]+"</br>")
+    // }
+  
+    function searchElement(){
+        let input= document.getElementById('input').value;
+    
+        if(arr.length <=input || input < 0){
+            document.write("Invalid Input</br>");
+        }
+        else{
+          document.write(arr[input] + "</br>");
+        }
+    }
+</Script>
+<body>
+    <input type="text" id="input" placeholder="Enter a number to search">
+    <button onclick="searchElement()">Search</button>
+</body>
+</html>
+
+
+    <!-- 
+            Array Travercing 
+               1: Make Html page write basic Array
+               2: Traverce with loop 
+               3: Accessing element by index
+               4: searching element by index
+               5: Display error message if index is invalid 
+    -->
